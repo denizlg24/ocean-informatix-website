@@ -4,7 +4,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 const Header = () => {
-  const [menuOpen, toggleMenu] = useState(false);
+  const [menuOpen, toggleMenu] = useState({
+    wasOpen: false,
+    isOpen: false,
+  });
   const pathname = usePathname();
   const [linkStatus, setLinkStatus] = useState({
     current: pathname,
@@ -35,13 +38,16 @@ const Header = () => {
 
   return (
     <header
-      className={`px-10 py-5 w-full font-monteserrat text-neutral fixed top-0 ${
-        !top ? `shadow-lg bg-base-100` : "shadow-none bg-transparent"
+      className={`px-10 py-5 w-full font-montserrat text-neutral fixed top-0 ${
+        !top
+          ? `shadow-lg bg-base-100`
+          : "bg-base-100 shadow-none md:bg-transparent"
       }  transition-all  z-50 flex flex-row justify-center items-center`}
     >
       <div className="flex flex-row items-center w-full justify-between relative py-2">
         <Link
           href="/"
+          aria-label="Go to Homepage"
           className="hover:cursor-pointer hover:scale-105 transition-all"
         >
           <svg
@@ -151,7 +157,7 @@ const Header = () => {
               />
             )}
           </Link>
-          <Link
+          {/*<Link
             href="/about"
             className="text-lg transition-all hover:cursor-pointer font-semibold hover:text-info px-2 relative"
           >
@@ -172,9 +178,9 @@ const Header = () => {
                 className="w-2 h-2 rounded-full bg-info absolute top-3 -right-2"
               />
             )}
-          </Link>
+            </Link>*/}
           <Link
-            href="/"
+            href="/contact"
             className="text-lg transition-all hover:cursor-pointer font-semibold bg-info rounded-lg p-2 border-2 border-transparent text-info-content hover:text-info hover:bg-transparent hover:border-info"
           >
             Contacte-nos
@@ -183,14 +189,23 @@ const Header = () => {
         <div
           onBlur={(e) => {
             if (!e.relatedTarget) {
-              toggleMenu(false);
+              toggleMenu({
+                isOpen: false,
+                wasOpen: true,
+              });
             }
           }}
           className="md:hidden relative"
         >
           <button
+            aria-label="Toggle Hamburger Menu"
             onClick={(e) => {
-              toggleMenu((prev) => !prev);
+              toggleMenu((prev) => {
+                return {
+                  isOpen: !prev.isOpen,
+                  wasOpen: prev.isOpen,
+                };
+              });
             }}
             className="btn btn-square btn-ghost"
           >
@@ -208,16 +223,19 @@ const Header = () => {
               ></path>
             </svg>
           </button>
-          {menuOpen && (
+          {menuOpen.isOpen && (
             <motion.div
               initial={{ y: -50 }}
               animate={{ y: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute w-screen flex flex-col items-stretch justify-start gap-2 bg-base-100 shadow-lg outline-1 outline outline-neutral-content p-3 -right-10 rounded top-[4.9rem]"
+              className="absolute w-screen flex flex-col items-stretch justify-start gap-2 bg-base-100 shadow-lg outline-1 outline outline-neutral-content p-3 -right-10 rounded top-[4.89rem]"
             >
               <Link
                 onClick={(e) => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
                 href="/"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
@@ -226,23 +244,29 @@ const Header = () => {
               </Link>
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/services"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
                 Serviços
               </Link>
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/portfolio"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
-                Portfolio
+                Portfólio
               </Link>
-              <Link
+              {/*<Link
                 onClick={() => {
                   toggleMenu(false);
                 }}
@@ -250,28 +274,34 @@ const Header = () => {
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
                 Sobre Nós
-              </Link>
+              </Link>*/}
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/contact"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold bg-info rounded-lg p-2 border-2 border-transparent text-info-content hover:text-info hover:bg-transparent hover:border-info"
               >
                 Contacte-nos
               </Link>
             </motion.div>
           )}
-          {!menuOpen && (
+          {!menuOpen.isOpen && menuOpen.wasOpen && (
             <motion.div
               initial={{ y: 0, opacity: 1 }}
               animate={{ y: -50, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute pointer-events-none w-screen flex flex-col items-stretch justify-start gap-2 bg-base-100 shadow-lg outline-1 outline outline-neutral-content p-3 -right-10 rounded top-[4.9rem]"
+              className="absolute pointer-events-none w-screen flex flex-col items-stretch justify-start gap-2 bg-base-100 shadow-lg outline-1 outline outline-neutral-content p-3 -right-10 rounded top-[4.89rem]"
             >
               <Link
                 onClick={(e) => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
                 href="/"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
@@ -280,23 +310,29 @@ const Header = () => {
               </Link>
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/services"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
                 Serviços
               </Link>
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/portfolio"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
-                Portfolio
+                Portfólio
               </Link>
-              <Link
+              {/*<Link
                 onClick={() => {
                   toggleMenu(false);
                 }}
@@ -304,12 +340,15 @@ const Header = () => {
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold hover:text-info px-2"
               >
                 Sobre Nós
-              </Link>
+              </Link>*/}
               <Link
                 onClick={() => {
-                  toggleMenu(false);
+                  toggleMenu({
+                    isOpen: false,
+                    wasOpen: true,
+                  });
                 }}
-                href="/"
+                href="/contact"
                 className="text-lg text-center transition-all hover:cursor-pointer font-semibold bg-info rounded-lg p-2 border-2 border-transparent text-info-content hover:text-info hover:bg-transparent hover:border-info"
               >
                 Contacte-nos

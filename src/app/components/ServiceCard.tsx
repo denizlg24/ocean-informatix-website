@@ -29,7 +29,7 @@ const ServiceCard = ({
           {title}
         </h1>
       </div>
-      <div className="w-full p-4 rounded-b-lg flex flex-col items-stretch justify-start font-monteserrat bg-base-100 h-full">
+      <div className="w-full p-4 rounded-b-lg flex flex-col items-stretch justify-start font-montserrat bg-base-100 h-full">
         <section>
           <h1 className="w-full text-left text-xl font-semibold text-info-content">
             Para quê?

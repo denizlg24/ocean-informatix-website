@@ -1,8 +1,8 @@
-import { FaXTwitter, FaInstagram, FaYoutube } from "react-icons/fa6";
+import { FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 bg-neutral font-monteserrat text-primary-content">
+    <footer className="footer footer-center p-10 bg-neutral font-montserrat text-primary-content">
       <aside>
         <svg
           version="1.0"
@@ -54,14 +54,26 @@ const Footer = () => {
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://www.instagram.com/oceaninformatix/" target="_blank">
+          <a
+            aria-label="X page"
+            href="https://twitter.com/oceaninformatix"
+            target="_blank"
+          >
             <FaXTwitter className="fill-current w-6 h-6" />
           </a>
-          <a href="https://www.instagram.com/oceaninformatix/" target="_blank">
+          <a
+            aria-label="Instagram page"
+            href="https://www.instagram.com/oceaninformatix"
+            target="_blank"
+          >
             <FaInstagram className="fill-current w-6 h-6" />
           </a>
-          <a href="https://www.instagram.com/oceaninformatix/" target="_blank">
-            <FaYoutube className="fill-current w-6 h-6" />
+          <a
+            aria-label="LinkedIn page"
+            href="https://www.linkedin.com/company/ocean-informatix"
+            target="_blank"
+          >
+            <FaLinkedin className="fill-current w-6 h-6" />
           </a>
         </div>
       </nav>

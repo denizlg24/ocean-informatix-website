@@ -24,7 +24,7 @@ const HeroServices = () => {
                 initial={{ x: -200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="text-lg 2xl:pr-40 2xl:text-xl cursor-default font-monteserrat pb-10"
+                className="text-lg 2xl:pr-40 2xl:text-xl cursor-default font-montserrat pb-10"
               >
                 Traduzimos as necessidades do seu negócio em soluções reais,
                 oferecendo serviços de software profissionais e personalizados.

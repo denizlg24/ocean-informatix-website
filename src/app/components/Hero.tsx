@@ -19,7 +19,7 @@ const Hero = () => {
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="text-lg 2xl:pr-40 2xl:text-xl cursor-default font-monteserrat pb-10"
+              className="text-lg 2xl:pr-40 2xl:text-xl cursor-default font-montserrat pb-10"
             >
               As nossas equipas de desenvolvimento altamente qualificadas
               ajudam-no a acelerar o seu negócio e a consolidar os seus serviços

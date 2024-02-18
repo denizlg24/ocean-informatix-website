@@ -14,20 +14,20 @@ const HowWeWork = () => {
     <div className="flex flex-1 flex-col items-center bg-base-100 pb-16 gap-8">
       <div className="text-center lg:text-left lg:px-40 sm:px-20 px-4 flex flex-col lg:flex-row items-center justify-between w-full gap-4">
         <div className="flex flex-col items-start justify-center">
-          <h3 className="text-neutral w-full text-4xl lg:text-5xl font-bold">
+          <h1 className="text-neutral w-full text-4xl lg:text-5xl font-bold">
             Como podemos ajudar
-          </h3>
-          <h5 className="text-info text-4xl w-full lg:text-5xl font-bold">
+          </h1>
+          <h2 className="text-blue-400 text-4xl w-full lg:text-5xl font-bold">
             o seu negócio
-          </h5>
+          </h2>
         </div>
         <div className="flex flex-col lg:items-end items-center justify-center relative">
-          <h2 className="relative text-neutral text-2xl lg:text-5xl font-bold z-20">
+          <h3 className="relative text-neutral text-2xl lg:text-5xl font-bold z-20">
             Abordagem
-          </h2>
-          <div className="text-info font-bold z-10 text-2xl lg:text-6xl absolute top-5">
+          </h3>
+          <h4 className="text-blue-400 font-bold z-10 text-2xl lg:text-6xl absolute top-5">
             V.I.D.A.
-          </div>
+          </h4>
         </div>
       </div>
       <div className="flex flex-col lg:px-40 sm:px-20 px-4 items-center w-full">
@@ -42,10 +42,10 @@ const HowWeWork = () => {
               ref={ref1}
               className="flex flex-col justify-start items-center gap-2 w-full lg:self-start self-end"
             >
-              <h1 className="bg-info font-monteserrat text-xl font-bold text-info-content rounded-lg shadow py-2 w-full">
+              <h1 className="bg-info font-montserrat text-xl font-bold text-info-content rounded-lg shadow py-2 w-full">
                 Visão
               </h1>
-              <p className="text-info-content text-left font-monteserrat text-lg">
+              <p className="text-info-content text-left font-montserrat text-lg">
                 Trabalhamos consigo para percebermos a sua visão do seu produto,
                 serviço ou negócio.
               </p>
@@ -61,10 +61,10 @@ const HowWeWork = () => {
               ref={ref2}
               className="flex flex-col justify-start items-center gap-2 w-full lg:self-start self-end"
             >
-              <h1 className="bg-info font-monteserrat text-xl font-bold text-info-content rounded-lg shadow  py-2 w-full">
+              <h1 className="bg-info font-montserrat text-xl font-bold text-info-content rounded-lg shadow  py-2 w-full">
                 Identificação
               </h1>
-              <p className="text-info-content  text-left font-monteserrat text-lg ">
+              <p className="text-info-content  text-left font-montserrat text-lg ">
                 Identificamos objetivos, traduzimo-los em necessidades e
                 desenhamos a sua solução.
               </p>
@@ -80,10 +80,10 @@ const HowWeWork = () => {
               ref={ref3}
               className="flex flex-col justify-start items-center gap-2 w-full lg:self-start self-end"
             >
-              <h1 className="bg-info font-monteserrat text-xl font-bold text-info-content rounded-lg shadow  py-2 w-full">
+              <h1 className="bg-info font-montserrat text-xl font-bold text-info-content rounded-lg shadow  py-2 w-full">
                 Desenvolvimento
               </h1>
-              <p className="text-info-content  text-left font-monteserrat text-lg ">
+              <p className="text-info-content  text-left font-montserrat text-lg ">
                 Desenvolvemos e implementamos a solução, avaliando a resposta às
                 suas necessidades.
               </p>
@@ -99,10 +99,10 @@ const HowWeWork = () => {
               ref={ref4}
               className="flex flex-col justify-start items-center gap-2 w-full lg:self-start self-end"
             >
-              <h1 className="bg-info font-monteserrat text-xl font-bold text-info-content rounded-lg shadow py-2 w-full">
+              <h1 className="bg-info font-montserrat text-xl font-bold text-info-content rounded-lg shadow py-2 w-full">
                 Acompanhamento
               </h1>
-              <p className="text-info-content  text-left font-monteserrat text-lg ">
+              <p className="text-info-content  text-left font-montserrat text-lg ">
                 Entregamos o produto e, se necessário, mantemos e desenvolvemos
                 as suas soluções para o futuro.
               </p>

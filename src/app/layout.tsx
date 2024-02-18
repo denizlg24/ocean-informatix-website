@@ -11,9 +11,32 @@ const ubuntu = Ubuntu({
 });
 
 export const metadata: Metadata = {
-  title: "Ocean Informatix",
+  title: "Início | Ocean Informatix",
   description:
-    "Ocean InformatiX is a consulting company opened in 2024 in Portugal. We provide tech and business solutions for your needs.",
+    "Na Ocean Informatix transformamos ideias em software inovador para acelerar o seu negócio.",
+  keywords: [
+    "ocean",
+    "informatics",
+    "ocean informatics",
+    "ocean informatix",
+    "it",
+    "tech",
+    "developers",
+    "consulting",
+    "it consulting",
+  ],
+  twitter: {
+    card: "summary",
+    title: "Início | Ocean Informatix",
+    description:
+      "Na Ocean Informatix transformamos ideias em software inovador para acelerar o seu negócio.",
+    site: "https://oceaninformatix.com",
+  },
+  openGraph: {
+    description:
+      "Na Ocean Informatix transformamos ideias em software inovador para acelerar o seu negócio.",
+    title: "Início | Ocean Informatix",
+  },
 };
 
 export default function RootLayout({
